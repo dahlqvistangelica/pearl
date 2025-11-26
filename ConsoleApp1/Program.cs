@@ -67,19 +67,23 @@ class Program
 //    Färg: Svart, Vit, Rosa
 //    Form: Rund, Droppformad
 //    Typ: Sötvatten, Saltvatten
+public enum Color { Svart, Vit, Rosa }
+public enum Shape { Rund, Droppformad }
+public enum Type { Sötvatten, Saltvatten }
 
 public record Pearl{
     public int Size { get; init; }
-    public string Color { get; init; }
-    public string Shape { get; init; }
-    public string Type { get; init; }
+    public Color PearlColor { get; init; }
+    public Shape PearlShape { get; init; }
+    public Type PearlType { get; init; }
 
-    public Pearl(cseedGenerator _seeder)
+
+    public Pearl(SeedGenerator _seeder)
     {
         Size = _seeder.Next(5, 26);
-        Color = _seeder.FromArray(new string[] { "Svart", "Vit", "Rosa" });
-        Shape = _seeder.FromArray(new string[] { "Rund", "Droppformad" });
-        Type = _seeder.FromArray(new string[] { "Sötvatten", "Saltvatten" });
+        PearlColor = _seeder.FromEnum<Color>();
+        PearlShape = _seeder.FromEnum<Shape>();
+        PearlType = _seeder.FromEnum<Type>();
     }
 
     public Pearl(int size, string color, string shape, string type)
