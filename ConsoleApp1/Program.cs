@@ -1,4 +1,5 @@
 ﻿using Seido.Utilities.SeedGenerator;
+using System.Security.Cryptography.X509Certificates;
 
 namespace _03_Pearls;
 
@@ -74,7 +75,7 @@ class Program
         }
         necklace.FindLargest();
         necklace.FindSmallest();
-
+        
     }
 }
 
@@ -117,6 +118,10 @@ public record Pearl
         this.PearlColor = original.PearlColor;
         this.PearlShape = original.PearlShape;
         this.PearlType = original.PearlType;
+    }
+    public override string ToString()
+    {
+       return $"Pearl: Size {PearlSize}mm, Color {PearlColor}, Shape {PearlShape}, Type {PearlType}";
     }
 }
 
