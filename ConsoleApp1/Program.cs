@@ -1,30 +1,25 @@
-﻿using Seido.Utilities.SeedGenerator;
+﻿using System;
+using System.Security.Cryptography;
+using System.Text;
+
+using Seido.Utilities.SeedGenerator;
 using System.Security.Cryptography.X509Certificates;
 
 namespace _03_Pearls;
 
 
-public enum Season { Winter, Summer, Fall }
+public enum Season { Winter, Summer, Fall}
 
 public class Necklace
 {
     public List<Pearl> Pearls { get; } = new List<Pearl>();
 
-    public Necklace(int numbOfPearls, SeedGenerator _seeder)
+    public Necklace(int numbOfPearls, SeedGenerator _seeder) 
     {
         for (int i = 0; i <= numbOfPearls; i++)
         {
             Pearls.Add(new Pearl(_seeder));
         }
-    }
-
-
-
-    public void FindLargest()
-    {
-        var orderedPearls = Pearls.OrderByDescending(p => p.PearlSize).ToList();
-        var largestPearl = orderedPearls.First();
-        Console.WriteLine($"Largest pearl: Size {largestPearl.PearlSize}mm, Color {largestPearl.PearlColor}, Shape {largestPearl.PearlShape}, Type {largestPearl.PearlType}");
     }
 
     public void FindSmallest()
@@ -38,34 +33,35 @@ class Program
 {
     static void Main(string[] args)
     {
+        
+        /*
+        int[] list = { 1, 3, -5, 8, 6, 10 };
+        int minVal = int.MaxValue;
 
-        //int[] list = { 1, 3, -5, 8, 6, 10 };
-        //int minVal = int.MaxValue;
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i] <= minVal )
+                minVal = list[i];
 
-        //for (int i = 0; i < list.Length; i++)
-        //{
-        //    if (list[i] <= minVal )
-        //        minVal = list[i];
+        }
 
-        //}
-
-        //Console.WriteLine(minVal);
-
-
-        //int maxVal = int.MinValue;
-
-        //for (int i = 0; i < list.Length; i++)
-        //{
-        //    if (list[i] >= maxVal)
-        //        maxVal = list[i];
-
-        //}
-
-        //Console.WriteLine(maxVal);
+        Console.WriteLine(minVal);
 
 
-        //Console.WriteLine("Hello, World!");
+        int maxVal = int.MinValue;
 
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i] >= maxVal)
+                maxVal = list[i];
+
+        }
+
+        Console.WriteLine(maxVal);
+
+
+        Console.WriteLine("Hello, World!");
+        */
         var rnd = new SeedGenerator();
 
         Necklace necklace = new Necklace(10, rnd);
@@ -89,8 +85,7 @@ public enum Color { Svart, Vit, Rosa }
 public enum Shape { Rund, Droppformad }
 public enum Type { Sötvatten, Saltvatten }
 
-public record Pearl
-{
+public record Pearl{
     public int PearlSize { get; init; }
     public Color PearlColor { get; init; }
     public Shape PearlShape { get; init; }
