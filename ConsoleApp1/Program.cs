@@ -75,7 +75,7 @@ public enum Shape { Rund, Droppformad }
 public enum Type { Sötvatten, Saltvatten }
 
 public record Pearl{
-    public int Size { get; init; }
+    public int PearlSize { get; init; }
     public Color PearlColor { get; init; }
     public Shape PearlShape { get; init; }
     public Type PearlType { get; init; }
@@ -83,7 +83,7 @@ public record Pearl{
 
     public Pearl(SeedGenerator _seeder)
     {
-        Size = _seeder.Next(5, 26);
+        PearlSize = _seeder.Next(5, 26);
         PearlColor = _seeder.FromEnum<Color>();
         PearlShape = _seeder.FromEnum<Shape>();
         PearlType = _seeder.FromEnum<Type>();
@@ -98,10 +98,10 @@ public record Pearl{
     }
     public Pearl(Pearl original)
     {
-        this.PearlSize = original.Size;
-        this.PearlColor = original.Color;
-        this.PearlShape = original.Shape;
-        this.PearlType = original.Type;
+        this.PearlSize = original.PearlSize;
+        this.PearlColor = original.PearlColor;
+        this.PearlShape = original.PearlShape;
+        this.PearlType = original.PearlType;
     }
 }
 
