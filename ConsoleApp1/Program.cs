@@ -93,6 +93,13 @@ public record Pearl{
         Shape = shape;
         Type = type;
     }
+    public Pearl(Pearl original)
+    {
+        this.Size = original.Size;
+        this.Color = original.Color;
+        this.Shape = original.Shape;
+        this.Type = original.Type;
+    }
 }
 
 // 2. När pärlan väl är skapad så ska man inte kunna ändra den.
