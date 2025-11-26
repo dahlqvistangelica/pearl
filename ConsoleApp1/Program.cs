@@ -109,7 +109,7 @@ public record Pearl{
 // 4. Skapa en ToString i din pärlklass som presenterar pärlan.
 //
 // 5. Skapa ett halsband bestående av 10 pärlor av slumpmässig storlek, färg
-//    form, och typ
+//    form, och typ 
 //
 // 6. Skriv kod som visar vilken färg, form och typ har den minsta och den största pärlan i halsbandet?
 //
