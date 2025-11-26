@@ -9,6 +9,18 @@ namespace _03_Pearls;
 
 public enum Season { Winter, Summer, Fall}
 
+public class Necklace
+{
+    public List<Pearl> Pearls { get; } = new List<Pearl>();
+
+    public Necklace(int numbOfPearls) 
+    {
+        for (int i = 0; i <= numbOfPearls; i++)
+        {
+            Pearls.Add(new Pearl(_seeder));
+        }
+    }
+}
 class Program
 {
     static void Main(string[] args)
