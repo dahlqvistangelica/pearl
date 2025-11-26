@@ -13,7 +13,7 @@ public class Necklace
 {
     public List<Pearl> Pearls { get; } = new List<Pearl>();
 
-    public Necklace(int numbOfPearls) 
+    public Necklace(int numbOfPearls, SeedGenerator _seeder) 
     {
         for (int i = 0; i <= numbOfPearls; i++)
         {
@@ -89,7 +89,7 @@ public record Pearl{
     public Pearl(int size, string color, string shape, string type)
     {
         Size = size;
-        Color = color;
+        PearlColor = color;
         Shape = shape;
         Type = type;
     }
