@@ -10,25 +10,7 @@ namespace _03_Pearls;
 
 public enum Season { Winter, Summer, Fall}
 
-public class Necklace
-{
-    public List<Pearl> Pearls { get; } = new List<Pearl>();
 
-    public Necklace(int numbOfPearls, SeedGenerator _seeder) 
-    {
-        for (int i = 0; i <= numbOfPearls; i++)
-        {
-            Pearls.Add(new Pearl(_seeder));
-        }
-    }
-
-    public void FindSmallest()
-    {
-        var smallest = Pearls.OrderBy(p => p.PearlSize)
-                             .First();
-        Console.WriteLine(smallest);
-    }
-}
 class Program
 {
     static void Main(string[] args)
@@ -119,7 +101,31 @@ public record Pearl{
        return $"Pearl: Size {PearlSize}mm, Color {PearlColor}, Shape {PearlShape}, Type {PearlType}";
     }
 }
+public class Necklace
+{
+    public List<Pearl> Pearls { get; } = new List<Pearl>();
 
+    public Necklace(int numbOfPearls, SeedGenerator _seeder)
+    {
+        for (int i = 0; i <= numbOfPearls; i++)
+        {
+            Pearls.Add(new Pearl(_seeder));
+        }
+    }
+
+    public void FindSmallest()
+    {
+        var smallest = Pearls.OrderBy(p => p.PearlSize)
+                             .First();
+        Console.WriteLine(smallest);
+    }
+    public void FindLargest()
+    {
+        var orderedPearls = Pearls.OrderByDescending(p => p.PearlSize).ToList();
+        var largestPearl = orderedPearls.First();
+        Console.WriteLine($"Largest pearl: Size {largestPearl.PearlSize}mm, Color {largestPearl.PearlColor}, Shape {largestPearl.PearlShape}, Type {largestPearl.PearlType}");
+    }
+}
 // 2. När pärlan väl är skapad så ska man inte kunna ändra den.
 
 // 3. Gör om constructor Pearl(csSeedGenerator _seeder) som initierar en slumpmässig pärla
