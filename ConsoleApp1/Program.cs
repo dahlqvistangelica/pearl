@@ -88,7 +88,8 @@ public record Pearl{
 
     public Pearl(int size, Color color, Shape shape, Type type)
     {
-        PearlColor = size;
+        Size = size;
+        PearlColor = color;
         PearlShape = shape;
         PearlType = type;
     }
