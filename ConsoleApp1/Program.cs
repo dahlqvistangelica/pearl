@@ -23,6 +23,13 @@ public class Necklace
 
     public void FindSmallest()
     { }
+
+    public void FindLargest()
+    {
+        var orderedPearls = Pearls.OrderByDescending(p => p.PearlSize).ToList();
+        var largestPearl = orderedPearls.First();
+        Console.WriteLine($"Largest pearl: Size {largestPearl.PearlSize}mm, Color {largestPearl.PearlColor}, Shape {largestPearl.PearlShape}, Type {largestPearl.PearlType}");
+    }
 }
 class Program
 {
