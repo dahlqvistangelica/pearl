@@ -20,6 +20,9 @@ public class Necklace
             Pearls.Add(new Pearl(_seeder));
         }
     }
+
+    public void FindSmallest()
+    { }
 }
 class Program
 {
