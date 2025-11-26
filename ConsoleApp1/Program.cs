@@ -91,10 +91,17 @@ public record Pearl{
 
     public Pearl(int size, Color color, Shape shape, Type type)
     {
-        Size = size;
+        PearlSize = size;
         PearlColor = color;
         PearlShape = shape;
         PearlType = type;
+    }
+    public Pearl(Pearl original)
+    {
+        this.PearlSize = original.Size;
+        this.PearlColor = original.Color;
+        this.PearlShape = original.Shape;
+        this.PearlType = original.Type;
     }
 }
 
@@ -105,7 +112,7 @@ public record Pearl{
 // 4. Skapa en ToString i din pärlklass som presenterar pärlan.
 //
 // 5. Skapa ett halsband bestående av 10 pärlor av slumpmässig storlek, färg
-//    form, och typ
+//    form, och typ 
 //
 // 6. Skriv kod som visar vilken färg, form och typ har den minsta och den största pärlan i halsbandet?
 //
