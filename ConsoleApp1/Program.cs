@@ -22,7 +22,11 @@ public class Necklace
     }
 
     public void FindSmallest()
-    { }
+    {
+        var smallest = Pearls.OrderBy(p => p.PearlSize)
+                             .First();
+        Console.WriteLine(smallest);
+    }
 }
 class Program
 {
