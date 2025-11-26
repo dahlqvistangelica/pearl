@@ -49,11 +49,17 @@ class Program
         Necklace necklace = new Necklace(10, rnd);
         foreach (var pearl in necklace.Pearls)
         {
-            Console.WriteLine($"Pearl: Size {pearl.PearlSize}mm, Color {pearl.PearlColor}, Shape {pearl.PearlShape}, Type {pearl.PearlType}");
+            Console.WriteLine(pearl);
         }
         necklace.FindLargest();
         necklace.FindSmallest();
-        
+        Console.WriteLine();
+        Necklace testNeck = new Necklace(necklace);
+        foreach (var pearl1 in testNeck.Pearls)
+        {
+            Console.WriteLine(pearl1);
+        }
+
     }
 }
 
@@ -115,7 +121,7 @@ public class Necklace
     public Necklace(Necklace original)
     {
         foreach (var pearl in original.Pearls)
-            (Pearls.Add(new Pearl(pearl)));
+        { Pearls.Add(new Pearl(pearl)); }
     }
     public void FindSmallest()
     {   
