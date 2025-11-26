@@ -121,13 +121,12 @@ public class Necklace
     {   
         var smallest = Pearls.OrderBy(p => p.PearlSize)
                              .First();
-        Console.WriteLine(smallest);
+        Console.WriteLine($"Smallest:\n{smallest}");
     }
     public void FindLargest()
     {
-        var orderedPearls = Pearls.OrderByDescending(p => p.PearlSize).ToList();
-        var largestPearl = orderedPearls.First();
-        Console.WriteLine($"Largest pearl: Size {largestPearl.PearlSize}mm, Color {largestPearl.PearlColor}, Shape {largestPearl.PearlShape}, Type {largestPearl.PearlType}");
+        var largestPearl = Pearls.OrderByDescending(p => p.PearlSize).First();
+        Console.WriteLine($"Largest:\n{largestPearl}");
     }
 }
 // 2. När pärlan väl är skapad så ska man inte kunna ändra den.
