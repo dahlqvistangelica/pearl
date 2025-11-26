@@ -55,7 +55,30 @@ class Program
 //    Färg: Svart, Vit, Rosa
 //    Form: Rund, Droppformad
 //    Typ: Sötvatten, Saltvatten
-//
+
+public record Pearl{
+    public int Size { get; init; }
+    public string Color { get; init; }
+    public string Shape { get; init; }
+    public string Type { get; init; }
+
+    public Pearl(cseedGenerator _seeder)
+    {
+        Size = _seeder.Next(5, 26);
+        Color = _seeder.FromArray(new string[] { "Svart", "Vit", "Rosa" });
+        Shape = _seeder.FromArray(new string[] { "Rund", "Droppformad" });
+        Type = _seeder.FromArray(new string[] { "Sötvatten", "Saltvatten" });
+    }
+
+    public Pearl(int size, string color, string shape, string type)
+    {
+        Size = size;
+        Color = color;
+        Shape = shape;
+        Type = type;
+    }
+}
+
 // 2. När pärlan väl är skapad så ska man inte kunna ändra den.
 
 // 3. Gör om constructor Pearl(csSeedGenerator _seeder) som initierar en slumpmässig pärla
