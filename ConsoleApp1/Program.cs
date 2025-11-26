@@ -86,12 +86,11 @@ public record Pearl{
         PearlType = _seeder.FromEnum<Type>();
     }
 
-    public Pearl(int size, string color, string shape, string type)
+    public Pearl(int size, Color color, Shape shape, Type type)
     {
-        Size = size;
-        Color = color;
-        Shape = shape;
-        Type = type;
+        PearlColor = size;
+        PearlShape = shape;
+        PearlType = type;
     }
 }
 
