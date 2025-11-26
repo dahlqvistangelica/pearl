@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="SeedGenerator">
+      <HintPath>..\..\SeedGenerator\seedGenerator\obj\Debug\net9.0\SeedGenerator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
