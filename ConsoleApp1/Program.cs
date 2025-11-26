@@ -88,10 +88,17 @@ public record Pearl{
 
     public Pearl(int size, Color color, Shape shape, Type type)
     {
-        Size = size;
+        PearlSize = size;
         PearlColor = color;
         PearlShape = shape;
         PearlType = type;
+    }
+    public Pearl(Pearl original)
+    {
+        this.PearlSize = original.Size;
+        this.PearlColor = original.Color;
+        this.PearlShape = original.Shape;
+        this.PearlType = original.Type;
     }
 }
 
