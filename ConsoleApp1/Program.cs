@@ -112,9 +112,13 @@ public class Necklace
             Pearls.Add(new Pearl(_seeder));
         }
     }
-
-    public void FindSmallest()
+    public Necklace(Necklace original)
     {
+        foreach (var pearl in original.Pearls)
+            (Pearls.Add(new Pearl(pearl)));
+    }
+    public void FindSmallest()
+    {   
         var smallest = Pearls.OrderBy(p => p.PearlSize)
                              .First();
         Console.WriteLine(smallest);
